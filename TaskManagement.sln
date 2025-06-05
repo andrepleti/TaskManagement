@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{59BE3FB4-A118-4675-9D13-20064CC4EF95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.API", "src\TaskManagement.API\TaskManagement.API.csproj", "{BE684C65-A302-40A8-A1A0-5425478BEA2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Application", "src\TaskManagement.Application\TaskManagement.Application.csproj", "{7960FE4E-0280-4B1A-9107-784B5572DD9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Domain", "src\TaskManagement.Domain\TaskManagement.Domain.csproj", "{C25D42DA-284A-4C0A-BB12-E06C792E4C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Infrastructure", "src\TaskManagement.Infrastructure\TaskManagement.Infrastructure.csproj", "{07052728-C451-450F-BD1F-A7B48D5CC919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.CrossCutting", "src\TaskManagement.CrossCutting\TaskManagement.CrossCutting.csproj", "{DA94A26A-0C84-4564-8CBF-8EE7C1A084C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3635479F-36FD-4036-B4BC-4F80B02F18ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Tests.Unit", "tests\TaskManagement.Tests.Unit\TaskManagement.Tests.Unit.csproj", "{8FFCB10C-A4C1-4250-887F-52A1ADFDD52B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE684C65-A302-40A8-A1A0-5425478BEA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE684C65-A302-40A8-A1A0-5425478BEA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE684C65-A302-40A8-A1A0-5425478BEA2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE684C65-A302-40A8-A1A0-5425478BEA2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7960FE4E-0280-4B1A-9107-784B5572DD9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7960FE4E-0280-4B1A-9107-784B5572DD9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7960FE4E-0280-4B1A-9107-784B5572DD9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7960FE4E-0280-4B1A-9107-784B5572DD9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25D42DA-284A-4C0A-BB12-E06C792E4C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25D42DA-284A-4C0A-BB12-E06C792E4C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25D42DA-284A-4C0A-BB12-E06C792E4C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25D42DA-284A-4C0A-BB12-E06C792E4C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07052728-C451-450F-BD1F-A7B48D5CC919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07052728-C451-450F-BD1F-A7B48D5CC919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07052728-C451-450F-BD1F-A7B48D5CC919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07052728-C451-450F-BD1F-A7B48D5CC919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA94A26A-0C84-4564-8CBF-8EE7C1A084C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA94A26A-0C84-4564-8CBF-8EE7C1A084C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA94A26A-0C84-4564-8CBF-8EE7C1A084C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA94A26A-0C84-4564-8CBF-8EE7C1A084C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FFCB10C-A4C1-4250-887F-52A1ADFDD52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFCB10C-A4C1-4250-887F-52A1ADFDD52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFCB10C-A4C1-4250-887F-52A1ADFDD52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFCB10C-A4C1-4250-887F-52A1ADFDD52B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE684C65-A302-40A8-A1A0-5425478BEA2E} = {59BE3FB4-A118-4675-9D13-20064CC4EF95}
+		{7960FE4E-0280-4B1A-9107-784B5572DD9C} = {59BE3FB4-A118-4675-9D13-20064CC4EF95}
+		{C25D42DA-284A-4C0A-BB12-E06C792E4C24} = {59BE3FB4-A118-4675-9D13-20064CC4EF95}
+		{07052728-C451-450F-BD1F-A7B48D5CC919} = {59BE3FB4-A118-4675-9D13-20064CC4EF95}
+		{DA94A26A-0C84-4564-8CBF-8EE7C1A084C3} = {59BE3FB4-A118-4675-9D13-20064CC4EF95}
+		{8FFCB10C-A4C1-4250-887F-52A1ADFDD52B} = {3635479F-36FD-4036-B4BC-4F80B02F18ED}
+	EndGlobalSection
+EndGlobal
