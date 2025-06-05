@@ -26,66 +26,10 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.CrossCutting/TaskManagement.CrossCutting.csproj": {
-                "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.CrossCutting/TaskManagement.CrossCutting.csproj"
-              },
               "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
                 "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
               }
             }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.CrossCutting/TaskManagement.CrossCutting.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.CrossCutting/TaskManagement.CrossCutting.csproj",
-        "projectName": "TaskManagement.CrossCutting",
-        "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.CrossCutting/TaskManagement.CrossCutting.csproj",
-        "packagesPath": "/home/andre/.nuget/packages/",
-        "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.CrossCutting/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/andre/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
           }
         },
         "warningProperties": {

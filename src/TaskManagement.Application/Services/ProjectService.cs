@@ -37,22 +37,15 @@ namespace TaskManagement.Application.Services
 
         public void Delete(int id)
         {
-            try
-            {
-                if (CheckIfExistsPendingTasksBy(id))
-                    throw new Exception(@"Não foi possível deletar o projeto, o mesmo possui tarefas pendentes.\n
-                                           Conclua ou remova as tarefas pendentes.");
+            if (CheckIfExistsPendingTasksBy(id))
+                throw new Exception(@"Não foi possível deletar o projeto, o mesmo possui tarefas pendentes.\n
+                                        Conclua ou remova as tarefas pendentes.");
 
-                var project = _repository.GetObjectBy(id);
+            var project = _repository.GetObjectBy(id);
 
-                _repository.Delete(project);
+            _repository.Delete(project);
 
-                _repository.Commit();
-            }
-            catch
-            {
-                throw new Exception("Erro ao deletar projeto.");
-            }
+            _repository.Commit();
         }
 
         private bool CheckIfExistsPendingTasksBy(int projectId)

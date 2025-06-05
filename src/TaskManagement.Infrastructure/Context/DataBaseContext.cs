@@ -9,6 +9,7 @@ namespace TaskManagement.Infrastructure.Context
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<Domain.Entities.Task> Tasks { get; set; }
+        public DbSet<TaskHistory> TaskHistories { get; set; }
 
         public override int SaveChanges()
         {
@@ -29,7 +30,7 @@ namespace TaskManagement.Infrastructure.Context
 
             foreach (var entity in entities)
             {
-                var now = DateTime.UtcNow; // data e hora atual
+                var now = DateTime.UtcNow;
 
                 if (entity.State == EntityState.Added)
                 {

@@ -1,9 +1,15 @@
 namespace TaskManagement.Domain.Interfaces.Services
 {
-    public interface ITaskService: IBaseService<Entities.Task>
+    public interface ITaskService
     {
         List<Entities.Task> GetListBy(int projectId);
+
+        void Add(Entities.Task task);
+
+        void Update(int userId, Entities.Task task);
+
+        void Delete(int id);
         
-        void Update(Entities.Task task);
+        decimal GetAverageTasksCompletedByUserOverLast30Days();
     }
 }

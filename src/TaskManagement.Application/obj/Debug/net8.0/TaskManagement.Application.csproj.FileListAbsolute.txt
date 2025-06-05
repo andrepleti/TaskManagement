@@ -1,0 +1,16 @@
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Application.deps.json
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Application.dll
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Application.pdb
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Domain.dll
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Domain.pdb
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.csproj.AssemblyReference.cache
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.AssemblyInfoInputs.cache
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.AssemblyInfo.cs
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.csproj.CoreCompileInputs.cache
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.sourcelink.json
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.csproj.CopyComplete
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.dll
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/refint/TaskManagement.Application.dll
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.pdb
+/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/Debug/net8.0/ref/TaskManagement.Application.dll

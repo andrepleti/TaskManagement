@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Test Debug",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "args": [
+        "test",
+        "${workspaceFolder}/tests/TaskManagement.Tests.Unit/TaskManagement.Tests.Unit.csproj",
+        "--filter",
+        "FullyQualifiedName~TaskManagement.Tests.Unit.Application.ProjectServiceTests.Delete_Should_Throw_If_PendingTasksExist",
+        "--no-build"
+      ],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": true,
+      "console": "integratedTerminal",
+      "justMyCode": false,
+            "exceptionBreakpoints": {
+        "all": false,
+        "userUnhandled": true
+      }
+    }
+  ]
+}

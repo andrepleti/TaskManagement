@@ -17,6 +17,12 @@ namespace TaskManagement.Infrastructure.Mappings
                 .HasMaxLength(200)
                 .IsRequired();
 
+            builder.Property(t => t.CreateAt)
+                .IsRequired();
+
+            builder.Property(t => t.UpdateAt)
+                .IsRequired();
+
             builder.HasMany(x => x.Tasks)
                 .WithOne(x => x.Project)
                 .HasForeignKey(x => x.ProjectId)

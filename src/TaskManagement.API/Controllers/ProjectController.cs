@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TaskManagement.API.Controllers;
 using TaskManagement.Domain.Entities;
 using TaskManagement.Domain.Interfaces.Services;
 
-namespace SagasBack.Application.Controllers
+namespace TaskManagement.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ProjectController : BaseController<Project>
+    public class ProjectController : ControllerBase
     {
         private readonly IProjectService _service;
 
-        public ProjectController(IProjectService service) : base(service)
+        public ProjectController(IProjectService service)
         {
             _service = service;
         }
@@ -22,6 +21,36 @@ namespace SagasBack.Application.Controllers
             try
             {
                 return Ok(_service.GetListBy(userId));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(new { Mensagem = erro.Message });
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] Project project)
+        {
+            try
+            {
+                _service.Add(project);
+
+                return Ok(new { Mensagem = "Projeto cadastrado com sucesso." });
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(new { Mensagem = erro.Message });
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _service.Delete(id);
+
+                return Ok(new { Mensagem = "Projeto deletado com sucesso." });
             }
             catch (Exception erro)
             {

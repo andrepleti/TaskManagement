@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using TaskManagement.API.Controllers;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TaskManagement.Domain.Interfaces.Services;
 
-namespace SagasBack.Application.Controllers
+namespace TaskManagement.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class TaskController : BaseController<TaskManagement.Domain.Entities.Task>
+    public class TaskController : ControllerBase
     {
         private readonly ITaskService _service;
 
-        public TaskController(ITaskService service) : base(service)
+        public TaskController(ITaskService service)
         {
             _service = service;
         }
@@ -28,14 +28,57 @@ namespace SagasBack.Application.Controllers
             }
         }
 
-        [HttpPut]
-        public IActionResult Put(TaskManagement.Domain.Entities.Task task)
+        [HttpPost]
+        public IActionResult Post([FromBody] TaskManagement.Domain.Entities.Task task)
         {
             try
             {
-                _service.Update(task);
+                _service.Add(task);
+
+                return Ok(new { Mensagem = "Tarefa cadastrada com sucesso." });
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(new { Mensagem = erro.Message });
+            }
+        }
+
+        [HttpPut("{userId}")]
+        public IActionResult Put(int userId, TaskManagement.Domain.Entities.Task task)
+        {
+            try
+            {
+                _service.Update(userId, task);
 
                 return Ok(new { Mensagem = "Tarefa atualizada com sucesso." });
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(new { Mensagem = erro.Message });
+            }
+        }
+
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _service.Delete(id);
+
+                return Ok(new { Mensagem = "Tarefa deletada com sucesso." });
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(new { Mensagem = erro.Message });
+            }
+        }
+
+        [HttpGet("averagecompleted")]
+        [Authorize(Roles = "manager")]
+        public IActionResult GetAverageTasksCompletedByUserOverLast30Days()
+        {
+            try
+            {
+                return Ok(_service.GetAverageTasksCompletedByUserOverLast30Days());
             }
             catch (Exception erro)
             {

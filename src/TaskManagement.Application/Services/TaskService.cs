@@ -4,7 +4,7 @@ using static TaskManagement.Domain.Entities.Task;
 
 namespace TaskManagement.Application.Services
 {
-    public class TaskService(ITaskRepository _repository) :  ITaskService
+    public class TaskService(ITaskRepository _repository, ITaskHistoryRepository _taskHistoryRepository, ITaskAuditService _auditService) : ITaskService
     {
         public List<Domain.Entities.Task> GetListBy(int projectId)
         {
@@ -20,28 +20,25 @@ namespace TaskManagement.Application.Services
 
         public void Add(Domain.Entities.Task task)
         {
-            try
-            {
-                if (CheckIfProjectHas20TasksBy(task.ProjectId))
+            if (CheckIfProjectHas20TasksBy(task.ProjectId))
                 throw new Exception($"Projeto já possui 20 tarefas.");
 
-                _repository.Add(task);
+            _repository.Add(task);
 
-                _repository.Commit();
-            }
-            catch
-            {
-                throw new Exception("Erro ao cadastrar tarefa.");
-            }
+            _repository.Commit();
         }
 
-        public void Update(Domain.Entities.Task task)
+        public void Update(int userId, Domain.Entities.Task task)
         {
             try
             {
-                task.Priority = RecoverOriginalTaskPriority(task.Id);
+                var oldTask = RecoverOriginalTask(task.Id);
+
+                task.Priority = RecoverOriginalTaskPriority(oldTask);
 
                 _repository.Update(task);
+
+                CreateHistory(oldTask, task, userId);
 
                 _repository.Commit();
             }
@@ -67,9 +64,26 @@ namespace TaskManagement.Application.Services
             }
         }
 
-        private TaskPriority RecoverOriginalTaskPriority(int id)
+        public decimal GetAverageTasksCompletedByUserOverLast30Days()
         {
-            return _repository.GetObjectBy(id).Priority;
+            try
+            {
+                return _repository.GetAverageTasksCompletedByUserOverLast30Days();
+            }
+            catch
+            {
+                throw new Exception("Erro ao carregar o relatório de tarefas concluídas.");
+            }
+        }
+
+        private Domain.Entities.Task RecoverOriginalTask(int id)
+        {
+            return _repository.GetObjectBy(id);
+        }
+
+        private TaskPriority RecoverOriginalTaskPriority(Domain.Entities.Task task)
+        {
+            return task.Priority;
         }
 
         private bool CheckIfProjectHas20TasksBy(int projectId)
@@ -77,6 +91,17 @@ namespace TaskManagement.Application.Services
             var tasks = _repository.GetListBy(projectId);
 
             return tasks.Count() >= 20;
+        }
+
+        private void CreateHistory(Domain.Entities.Task oldTask, Domain.Entities.Task newTask, int userId)
+        {
+            var changes = _auditService.GenerateChanges(oldTask, newTask, userId);
+
+            foreach (var history in changes)
+            {
+                history.Comment = newTask.Comment;
+                _taskHistoryRepository.Add(history);
+            }
         }
     }
 }

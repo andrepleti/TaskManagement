@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Infrastructure.Mappings
 {
@@ -26,6 +25,21 @@ namespace TaskManagement.Infrastructure.Mappings
 
             builder.Property(x => x.Priority)
                 .IsRequired();
+
+            builder.Property(x => x.Comment)
+                .HasMaxLength(500)
+                .IsRequired(false);
+
+            builder.Property(t => t.CreateAt)
+                .IsRequired();
+
+            builder.Property(t => t.UpdateAt)
+                .IsRequired();
+
+            builder.HasMany(x => x.TaskHistories)
+                .WithOne(x => x.Task)
+                .HasForeignKey(x => x.TaskId)
+                .HasPrincipalKey(x => x.Id);
 
             builder.ToTable(nameof(Domain.Entities.Task));
         }
