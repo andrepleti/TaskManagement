@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TaskManagement.Domain.Entities;
 
-namespace TaskManagement.Infrastructure.Mapping
+namespace TaskManagement.Infrastructure.Mappings
 {
     public class ProjectMap
     {

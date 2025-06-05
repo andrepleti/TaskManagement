@@ -1,15 +1,23 @@
 namespace TaskManagement.Domain.Entities
 {
-    public class Task(int id, int projectId, string title, string description, DateTime dueDate, Task.TaskStatus status, Task.TaskPriority priority)
+    public class Task : BaseEntity
     {
-        public int Id { get; set; } = id;
-        public int ProjectId { get; set; } = projectId;
-        public string Title { get; set; } = title;
-        public string Description { get; set; } = description;
-        public DateTime DueDate { get; set; } = dueDate;
-        public TaskStatus Status { get; set; } = status;
-        public TaskPriority Priority { get; set; } = priority;
-        public Project Project { get; set; } = new Project(0, 0, string.Empty);
+        public Task()
+        {
+            this.ProjectId = 0;
+            this.Description = string.Empty;
+            this.DueDate = new DateTime();
+            this.Status = TaskStatus.Pending;
+            this.Priority = TaskPriority.Low;
+            this.Project = new Project();
+        }
+
+        public int ProjectId { get; set; }
+        public string Description { get; set; }
+        public DateTime DueDate { get; set; }
+        public TaskStatus Status { get; set; }
+        public TaskPriority Priority { get; set; }
+        public Project Project { get; set; }
 
         public enum TaskStatus
         {
