@@ -13,22 +13,17 @@ namespace TaskManagement.Infrastructure.Repositories
 
         public Domain.Entities.Task GetObjectBy(int id)
         {
-            return _db.Set<Domain.Entities.Task>().Where(x => x.Id == id).FirstOrDefault(new Domain.Entities.Task());
+            return _db.Set<Domain.Entities.Task>().Where(x => x.Id == id).FirstOrDefault()!;
         }
 
-        public void Add(Domain.Entities.Task entity)
+        public void Add(Domain.Entities.Task task)
         {
-            _db.Entry(entity).State = EntityState.Added;
-        }
-
-        public void Update(Domain.Entities.Task task)
-        {
-            _db.Entry(task).State = EntityState.Modified;
+            _db.Entry(task).State = EntityState.Added;
         }
         
-        public void Delete(Domain.Entities.Task entity)
+        public void Delete(Domain.Entities.Task task)
         {
-            _db.Entry(entity).State = EntityState.Deleted;
+            _db.Remove(task);
         }
 
         public void Commit()
@@ -44,7 +39,7 @@ namespace TaskManagement.Infrastructure.Repositories
                             .Include(x => x.Project)
                             .ToList();
 
-            return tasks.Count / tasks.Select(x => x.Project.UserId).Distinct().Count();
+            return tasks.Select(x => x.Id).Distinct().Count() / tasks.Select(x => x.Project.UserId).Distinct().Count();
 
         }
     }

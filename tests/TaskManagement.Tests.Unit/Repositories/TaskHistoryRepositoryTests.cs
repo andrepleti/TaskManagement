@@ -50,12 +50,14 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void GetListBy_Should_Return_TaskHistories_For_Task()
         {
             // Arrange
-            _context.Set<TaskHistory>().Add(new TaskHistory { Id = 2, TaskId = 1, ChangedField = "Status" });
-            _context.Set<TaskHistory>().Add(new TaskHistory { Id = 3, TaskId = 2, ChangedField = "Description" });
+            var history = new TaskHistory { Id = 2, TaskId = 27, ChangedField = "Status" };
+            _context.Entry(history).State = EntityState.Added;
+            var history2 = new TaskHistory { Id = 3, TaskId = 28, ChangedField = "Description" };
+            _context.Entry(history2).State = EntityState.Added;
             _context.SaveChanges();
 
             // Act
-            var result = _repository.GetListBy(1);
+            var result = _repository.GetListBy(27);
 
             // Assert
             Assert.Single(result);

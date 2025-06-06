@@ -14,7 +14,7 @@ namespace TaskManagement.Infrastructure.Repositories
 
         public Project GetObjectBy(int id)
         {
-            return _db.Set<Project>().Where(x => x.Id == id).FirstOrDefault(new Project());
+            return _db.Set<Project>().FirstOrDefault(x => x.Id == id)!;
         }
 
         public void Add(Project project)

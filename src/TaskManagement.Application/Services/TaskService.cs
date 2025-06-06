@@ -32,11 +32,18 @@ namespace TaskManagement.Application.Services
         {
             try
             {
-                var oldTask = RecoverOriginalTask(task.Id);
+                var existingTask = RecoverOriginalTask(task.Id);
 
-                task.Priority = RecoverOriginalTaskPriority(oldTask);
+                task.Priority = RecoverOriginalTaskPriority(existingTask);
 
-                _repository.Update(task);
+                var oldTask = Clone(existingTask);
+
+                existingTask.Title = task.Title;
+                existingTask.Description = task.Description;
+                existingTask.DueDate = task.DueDate;
+                existingTask.Status = task.Status;
+                existingTask.Priority = task.Priority;
+                existingTask.Comment = task.Comment;
 
                 CreateHistory(oldTask, task, userId);
 
@@ -102,6 +109,20 @@ namespace TaskManagement.Application.Services
                 history.Comment = newTask.Comment;
                 _taskHistoryRepository.Add(history);
             }
+        }
+
+        private Domain.Entities.Task Clone(Domain.Entities.Task task)
+        {
+            return new Domain.Entities.Task
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Description = task.Description,
+                DueDate = task.DueDate,
+                Status = task.Status,
+                Priority = task.Priority,
+                Comment = task.Comment
+            };
         }
     }
 }

@@ -40,6 +40,11 @@ app.UseCors(x => x
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
+using var serviceScope = app.Services
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope();
+serviceScope.ServiceProvider.GetService<DataBaseContext>()!.Database.Migrate();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

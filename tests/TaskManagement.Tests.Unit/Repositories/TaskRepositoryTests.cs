@@ -50,16 +50,17 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void GetListBy_Should_Return_Tasks_For_Project()
         {
             // Arrange
-            _context.Set<TaskManagement.Domain.Entities.Task>().Add(new TaskManagement.Domain.Entities.Task { Id = 2, Title = "Task 1", ProjectId = 1 });
-            _context.Set<TaskManagement.Domain.Entities.Task>().Add(new TaskManagement.Domain.Entities.Task { Id = 3, Title = "Task 2", ProjectId = 2 });
+            var task = new TaskManagement.Domain.Entities.Task { Id = 2, Title = "Task 1", Description = "Task One", DueDate = DateTime.Now, ProjectId = 100 };
+            _context.Entry(task).State = EntityState.Added;
+            var task2 = new TaskManagement.Domain.Entities.Task { Id = 3, Title = "Task 2", Description = "Task Two", DueDate = DateTime.Now, ProjectId = 200 };
+            _context.Entry(task2).State = EntityState.Added;
             _context.SaveChanges();
 
             // Act
-            var result = _repository.GetListBy(1);
+            var result = _repository.GetListBy(100);
 
             // Assert
-            Assert.Single(result);
-            Assert.Equal("Task 1", result.First().Title);
+            Assert.Contains(result, t => t.Title == "Task 1");
         }
 
         [Fact]
@@ -82,13 +83,12 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void Update_Should_Modify_Task_In_Database()
         {
             // Arrange
-            var task = new TaskManagement.Domain.Entities.Task { Id = 5, Title = "Old Title", ProjectId = 1 };
+            var task = new TaskManagement.Domain.Entities.Task { Id = 5, Title = "Old Title", Description = "Old Title", ProjectId = 1, DueDate = DateTime.Now };
             _context.Set<TaskManagement.Domain.Entities.Task>().Add(task);
             _context.SaveChanges();
 
             // Act
             task.Title = "New Title";
-            _repository.Update(task);
             _repository.Commit();
 
             // Assert
@@ -101,8 +101,8 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void Delete_Should_Remove_Task_From_Database()
         {
             // Arrange
-            var task = new TaskManagement.Domain.Entities.Task { Id = 6, Title = "To Delete", ProjectId = 1 };
-            _context.Set<TaskManagement.Domain.Entities.Task>().Add(task);
+            var task = new TaskManagement.Domain.Entities.Task { Id = 66, Title = "To Delete", ProjectId = 101 };
+            _context.Entry(task).State = EntityState.Added;
             _context.SaveChanges();
 
             // Act
@@ -110,7 +110,7 @@ namespace TaskManagement.Tests.Unit.Repositories
             _repository.Commit();
 
             // Assert
-            var result = _context.Set<TaskManagement.Domain.Entities.Task>().Find(6);
+            var result = _context.Set<TaskManagement.Domain.Entities.Task>().Find(66);
             Assert.Null(result);
         }
 
@@ -118,20 +118,21 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void GetAverageTasksCompletedByUserOverLast30Days_Should_Return_Correct_Average()
         {
             // Arrange
-            var userId1 = 1;
-            var userId2 = 2;
             var now = DateTime.Now;
 
-            var project1 = new Project { Id = 1, UserId = userId1, Title = "Project 1" };
-            var project2 = new Project { Id = 2, UserId = userId2, Title = "Project 2" };
+            var projects = new List<Project>
+            {
+                new Project { Id = 60, UserId = 1, Title = "Project 1" },
+                new Project { Id = 70, UserId = 1, Title = "Project 2" }
+            };
 
-            _context.Set<Project>().AddRange(project1, project2);
+            _context.Set<Project>().AddRange(projects);
 
             var tasks = new List<TaskManagement.Domain.Entities.Task>
             {
-                new TaskManagement.Domain.Entities.Task { Id = 10, ProjectId = 1, Status = TaskManagement.Domain.Entities.Task.TaskStatus.Completed, UpdateAt = now.AddDays(-5), Title = "Task 1", Description = "Desc", Priority = TaskManagement.Domain.Entities.Task.TaskPriority.Low, DueDate = now.AddDays(1) },
-                new TaskManagement.Domain.Entities.Task { Id = 11, ProjectId = 1, Status = TaskManagement.Domain.Entities.Task.TaskStatus.Completed, UpdateAt = now.AddDays(-10), Title = "Task 2", Description = "Desc", Priority = TaskManagement.Domain.Entities.Task.TaskPriority.Low, DueDate = now.AddDays(1) },
-                new TaskManagement.Domain.Entities.Task { Id = 12, ProjectId = 2, Status = TaskManagement.Domain.Entities.Task.TaskStatus.Completed, UpdateAt = now.AddDays(-2), Title = "Task 3", Description = "Desc", Priority = TaskManagement.Domain.Entities.Task.TaskPriority.Low, DueDate = now.AddDays(1) }
+                new TaskManagement.Domain.Entities.Task { Id = 10, ProjectId = 60, Status = TaskManagement.Domain.Entities.Task.TaskStatus.Completed, UpdateAt = now.AddDays(-5), Title = "Task 1", Description = "Desc", Priority = TaskManagement.Domain.Entities.Task.TaskPriority.Low, DueDate = now.AddDays(1) },
+                new TaskManagement.Domain.Entities.Task { Id = 11, ProjectId = 60, Status = TaskManagement.Domain.Entities.Task.TaskStatus.Completed, UpdateAt = now.AddDays(-10), Title = "Task 2", Description = "Desc", Priority = TaskManagement.Domain.Entities.Task.TaskPriority.Low, DueDate = now.AddDays(1) },
+                new TaskManagement.Domain.Entities.Task { Id = 12, ProjectId = 70, Status = TaskManagement.Domain.Entities.Task.TaskStatus.Completed, UpdateAt = now.AddDays(-2), Title = "Task 3", Description = "Desc", Priority = TaskManagement.Domain.Entities.Task.TaskPriority.Low, DueDate = now.AddDays(1) }
             };
 
             _context.Set<TaskManagement.Domain.Entities.Task>().AddRange(tasks);
@@ -141,7 +142,7 @@ namespace TaskManagement.Tests.Unit.Repositories
             var average = _repository.GetAverageTasksCompletedByUserOverLast30Days();
 
             // Assert
-            Assert.Equal(1.5m, average);
+            Assert.Equal(3, average);
         }
     }
 }

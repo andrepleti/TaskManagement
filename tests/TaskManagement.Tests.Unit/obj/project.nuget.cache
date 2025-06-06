@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "QLYy/6oVmtlKe7CJmCZ16HPt+KjqMCT8kkKre1h8ZV/Gbqy14TE2lsckBDLtrkD0Z5Jk3Wx2XyPHeO4/ene/sg==",
+  "dgSpecHash": "CN4+GcCxXWEcoTnbBR1GSmhetPRbd+ehcKFyEM7KRFRbTYKnJSDAVhtvc3fVualN5gK4ArCLhlWPXBbriY7pVw==",
   "success": true,
   "projectFilePath": "/home/andre/Documents/Git/TaskManagement/tests/TaskManagement.Tests.Unit/TaskManagement.Tests.Unit.csproj",
   "expectedPackageFiles": [
     "/home/andre/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
-    "/home/andre/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
+    "/home/andre/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
     "/home/andre/.nuget/packages/fluentassertions/8.3.0/fluentassertions.8.3.0.nupkg.sha512",
     "/home/andre/.nuget/packages/microsoft.codecoverage/17.6.0/microsoft.codecoverage.17.6.0.nupkg.sha512",
     "/home/andre/.nuget/packages/microsoft.entityframeworkcore/8.0.16/microsoft.entityframeworkcore.8.0.16.nupkg.sha512",

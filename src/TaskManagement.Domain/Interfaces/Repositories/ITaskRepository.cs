@@ -8,8 +8,6 @@ namespace TaskManagement.Domain.Interfaces.Repositories
 
         void Add(Entities.Task task);
 
-        void Update(Entities.Task task);
-
         void Delete(Entities.Task task);
 
         decimal GetAverageTasksCompletedByUserOverLast30Days();

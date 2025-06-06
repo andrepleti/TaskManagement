@@ -41,12 +41,12 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void GetListBy_Should_Return_Projects_For_User()
         {
             // Arrange
-            _context.Set<Project>().Add(new Project { Id = 2, Title = "Project 1", UserId = 1 });
-            _context.Set<Project>().Add(new Project { Id = 3, Title = "Project 2", UserId = 2 });
+            _context.Set<Project>().Add(new Project { Id = 2, Title = "Project 1", UserId = 17 });
+            _context.Set<Project>().Add(new Project { Id = 3, Title = "Project 2", UserId = 18 });
             _context.SaveChanges();
 
             // Act
-            var result = _repository.GetListBy(1);
+            var result = _repository.GetListBy(17);
 
             // Assert
             Assert.Single(result);
@@ -73,8 +73,8 @@ namespace TaskManagement.Tests.Unit.Repositories
         public void Delete_Should_Remove_Project_From_Database()
         {
             // Arrange
-            var project = new Project { Id = 5, Title = "To Delete", UserId = 1 };
-            _context.Set<Project>().Add(project);
+            var project = new Project { Id = 53, Title = "To Delete", UserId = 113 };
+            _context.Entry(project).State = EntityState.Added;
             _context.SaveChanges();
 
             // Act
@@ -82,7 +82,7 @@ namespace TaskManagement.Tests.Unit.Repositories
             _repository.Commit();
 
             // Assert
-            var result = _context.Set<Project>().Find(5);
+            var result = _context.Set<Project>().Find(53);
             Assert.Null(result);
         }
     }
