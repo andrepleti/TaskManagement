@@ -1,3 +1,5 @@
+Todos os comandos abaixo, devem ser rodados na pasta raiz do projeto:
+
 Para rodar o container:
 
 docker-compose up --build
