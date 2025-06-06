@@ -14,8 +14,7 @@ services:
         condition: service_healthy
     entrypoint: ["/wait-for.sh", "dotnet", "TaskManagement.API.dll"]
     volumes:
-      - ./coverage:/src/TestResults/report  # Mapeia só a pasta de relatório HTML do container para o host
-      - .:/src                             # Permite editar/rodar testes manualmente dentro do container
+      - .:/src  # Mapeia o código para poder editar/rodar comandos manualmente dentro do container
 
   db:
     image: mysql:8.0

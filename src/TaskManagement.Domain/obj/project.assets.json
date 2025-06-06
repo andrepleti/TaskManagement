@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/andre/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
+      "projectUniqueName": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
       "projectName": "TaskManagement.Domain",
-      "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
-      "packagesPath": "/home/andre/.nuget/packages/",
-      "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/obj/",
+      "projectPath": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/src/src/TaskManagement.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/andre/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

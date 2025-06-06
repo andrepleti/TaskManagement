@@ -1,9 +1,11 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Infrastructure.Mappings
 {
+    [ExcludeFromCodeCoverage]
     public class ProjectMap
     {
         public void Configure(EntityTypeBuilder<Project> builder)

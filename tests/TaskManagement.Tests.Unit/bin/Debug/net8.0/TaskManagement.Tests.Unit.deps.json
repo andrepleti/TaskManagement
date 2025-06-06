@@ -1252,12 +1252,18 @@
           "TaskManagement.Domain": "1.0.0"
         },
         "runtime": {
-          "TaskManagement.Application.dll": {}
+          "TaskManagement.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "TaskManagement.Domain/1.0.0": {
         "runtime": {
-          "TaskManagement.Domain.dll": {}
+          "TaskManagement.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "TaskManagement.Infrastructure/1.0.0": {
@@ -1268,7 +1274,10 @@
           "TaskManagement.Domain": "1.0.0"
         },
         "runtime": {
-          "TaskManagement.Infrastructure.dll": {}
+          "TaskManagement.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -1,8 +1,10 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace TaskManagement.Infrastructure.Mappings
 {
+    [ExcludeFromCodeCoverage]
     public class TaskMap
     {
         public void Configure(EntityTypeBuilder<Domain.Entities.Task> builder)

@@ -1,9 +1,11 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Infrastructure.Mappings
 {
+    [ExcludeFromCodeCoverage]
     public class TaskHistoryMap
     {
         public void Configure(EntityTypeBuilder<TaskHistory> builder)
@@ -13,7 +15,7 @@ namespace TaskManagement.Infrastructure.Mappings
             builder.Property(x => x.ChangedField)
                 .HasMaxLength(50)
                 .IsRequired();
-                
+
             builder.Property(x => x.OldValue)
                 .HasMaxLength(200)
                 .IsRequired();

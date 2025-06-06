@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.API/TaskManagement.API.csproj": {}
+    "/src/src/TaskManagement.API/TaskManagement.API.csproj": {}
   },
   "projects": {
-    "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.API/TaskManagement.API.csproj": {
+    "/src/src/TaskManagement.API/TaskManagement.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.API/TaskManagement.API.csproj",
+        "projectUniqueName": "/src/src/TaskManagement.API/TaskManagement.API.csproj",
         "projectName": "TaskManagement.API",
-        "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.API/TaskManagement.API.csproj",
-        "packagesPath": "/home/andre/.nuget/packages/",
-        "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.API/obj/",
+        "projectPath": "/src/src/TaskManagement.API/TaskManagement.API.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/src/src/TaskManagement.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andre/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/TaskManagement.Application.csproj": {
-                "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/TaskManagement.Application.csproj"
+              "/src/src/TaskManagement.Application/TaskManagement.Application.csproj": {
+                "projectPath": "/src/src/TaskManagement.Application/TaskManagement.Application.csproj"
               },
-              "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj": {
-                "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj"
+              "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj": {
+                "projectPath": "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj"
               }
             }
           }
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -71,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/TaskManagement.Application.csproj": {
+    "/src/src/TaskManagement.Application/TaskManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/TaskManagement.Application.csproj",
+        "projectUniqueName": "/src/src/TaskManagement.Application/TaskManagement.Application.csproj",
         "projectName": "TaskManagement.Application",
-        "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/TaskManagement.Application.csproj",
-        "packagesPath": "/home/andre/.nuget/packages/",
-        "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/obj/",
+        "projectPath": "/src/src/TaskManagement.Application/TaskManagement.Application.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/src/src/TaskManagement.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andre/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -97,8 +102,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
-                "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
+              "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
+                "projectPath": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
               }
             }
           }
@@ -107,6 +112,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -128,21 +138,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
+    "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
+        "projectUniqueName": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
         "projectName": "TaskManagement.Domain",
-        "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
-        "packagesPath": "/home/andre/.nuget/packages/",
-        "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/obj/",
+        "projectPath": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/src/src/TaskManagement.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andre/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -160,6 +170,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -181,21 +196,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj": {
+    "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
+        "projectUniqueName": "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
         "projectName": "TaskManagement.Infrastructure",
-        "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
-        "packagesPath": "/home/andre/.nuget/packages/",
-        "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/obj/",
+        "projectPath": "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/src/src/TaskManagement.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andre/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -207,8 +222,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
-                "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
+              "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
+                "projectPath": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
               }
             }
           }
@@ -217,6 +232,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -258,7 +278,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

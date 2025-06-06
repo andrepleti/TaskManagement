@@ -1,3 +1,15 @@
+/src/src/TaskManagement.Domain/bin/Debug/net8.0/TaskManagement.Domain.deps.json
+/src/src/TaskManagement.Domain/bin/Debug/net8.0/TaskManagement.Domain.dll
+/src/src/TaskManagement.Domain/bin/Debug/net8.0/TaskManagement.Domain.pdb
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.AssemblyInfoInputs.cache
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.AssemblyInfo.cs
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.csproj.CoreCompileInputs.cache
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.sourcelink.json
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.dll
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/refint/TaskManagement.Domain.dll
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.pdb
+/src/src/TaskManagement.Domain/obj/Debug/net8.0/ref/TaskManagement.Domain.dll
 /home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/bin/Debug/net8.0/TaskManagement.Domain.deps.json
 /home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/bin/Debug/net8.0/TaskManagement.Domain.dll
 /home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/bin/Debug/net8.0/TaskManagement.Domain.pdb

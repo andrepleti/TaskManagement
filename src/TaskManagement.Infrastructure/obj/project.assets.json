@@ -2131,19 +2131,19 @@
     ]
   },
   "packageFolders": {
-    "/home/andre/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
+      "projectUniqueName": "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
       "projectName": "TaskManagement.Infrastructure",
-      "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
-      "packagesPath": "/home/andre/.nuget/packages/",
-      "outputPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Infrastructure/obj/",
+      "projectPath": "/src/src/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/src/src/TaskManagement.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/andre/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2155,8 +2155,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
-              "projectPath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
+            "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj": {
+              "projectPath": "/src/src/TaskManagement.Domain/TaskManagement.Domain.csproj"
             }
           }
         }
@@ -2165,6 +2165,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2206,7 +2211,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

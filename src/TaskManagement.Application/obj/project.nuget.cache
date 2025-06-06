@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I8mgCAbiJdfUdzl/F25L2d+NEFcxOEK/6BygyLT1kuB9nyiA1FIwIUO4TCkDzFEYFovwIOhlH/2vjR1FJLp9PQ==",
+  "dgSpecHash": "hEMYtyXj/bI=",
   "success": true,
-  "projectFilePath": "/home/andre/Documents/Git/TaskManagement/src/TaskManagement.Application/TaskManagement.Application.csproj",
+  "projectFilePath": "/src/src/TaskManagement.Application/TaskManagement.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
